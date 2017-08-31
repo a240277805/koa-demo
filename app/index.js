@@ -1,11 +1,13 @@
 /**
  * Created by zmk on 2017/8/15.
  */
+'use strict';
 const koa = require("koa"),
    mylogger= require("./mylogger.js"),
     // router =require('koa-router'),
     routes=require('./routes/index'),
     fs=require("fs"),
+    Color=require("../consoleColor/原生"),
 assert = require('assert');
 
 var reqCount=0;
@@ -16,11 +18,15 @@ var promises=[];
 
 var app = new koa();
 
+global.Color=Color;
+
+
+
 /**
  * 错误处理
  */
 app.use(function *(next){
-    console.log(">>>>>>>>第"+reqCount+"次-----start------------");
+    console.log(Color.yellow,">>>>>>>>","第"+reqCount+"次-----start------------");
     try{
         this.reqStatTime=new Date;
         this.reqCount=reqCount;
@@ -32,8 +38,8 @@ app.use(function *(next){
         throw new Error("ddd");
     }
     var ms = new Date - this.reqStatTime;
-    console.log('----%s %s -用时 %s 毫秒', this.method, this.url, ms);
-    console.log("<<<<<<<<<<<<<<<<<<第"+this.reqCount+"次------end---------用时"+ms+"毫秒-");
+    console.log(Color.yellow,`----${this.method} url:${this.url} -用时${ms} 毫秒`);
+    console.log(Color.yellow,"<<<<<<<<<<<<<<<<<<","第"+this.reqCount+"次------end---------用时"+ms+"毫秒-");
 });
 
 

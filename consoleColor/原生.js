@@ -1,6 +1,6 @@
-console.log('\x1B[36m%s\x1B[0m', "abc");  //cyan
-console.log('\x1B[33m%s\x1b[0m:', "def");  //yellow
-var styles = {
+// console.log('\x1B[36m%s\x1B[0m', "abc");  //cyan
+// console.log('\x1B[33m%s\x1b[0m:', "def");  //yellow
+module.exports  = {
     'bold'          : ['\x1B[1m',  '\x1B[22m'],
     'italic'        : ['\x1B[3m',  '\x1B[23m'],
     'underline'     : ['\x1B[4m',  '\x1B[24m'],
@@ -14,7 +14,8 @@ var styles = {
     'green'         : ['\x1B[32m', '\x1B[39m'],
     'magenta'       : ['\x1B[35m', '\x1B[39m'],
     'red'           : ['\x1B[31m', '\x1B[39m'],
-    'yellow'        : ['\x1B[33m', '\x1B[39m'],
+    // 'yellow'        : ['\x1B[33m', '\x1B[39m'],
+    'yellow':'\x1B[33m%s\x1b[0m:',
     'whiteBG'       : ['\x1B[47m', '\x1B[49m'],
     'greyBG'        : ['\x1B[49;5;8m', '\x1B[49m'],
     'blackBG'       : ['\x1B[40m', '\x1B[49m'],
