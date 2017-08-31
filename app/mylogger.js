@@ -3,7 +3,7 @@
  */
 //可家参数的中间件写法
 module.exports.logger =function (format){
-    console.log("enter logger method");
+    // console.log("enter logger method");
 
     return function* (next){
         console.log(this.url);

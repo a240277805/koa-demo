@@ -8,6 +8,7 @@ const koa = require("koa"),
     routes=require('./routes/index'),
     fs=require("fs"),
     Color=require("../consoleColor/原生"),
+    MyConsole=require('../consoleColor/MyConsole'),
 assert = require('assert');
 
 var reqCount=0;
@@ -19,8 +20,7 @@ var promises=[];
 var app = new koa();
 
 global.Color=Color;
-
-
+global.consoler=MyConsole;
 
 /**
  * 错误处理
