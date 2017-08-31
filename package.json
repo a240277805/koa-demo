@@ -9,8 +9,10 @@
   "author": "luckyboyzmk@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.5.0",
+    "colors": "^1.1.2",
     "koa": "^2.3.0",
-    "koa-router": "^7.2.1",
+    "koa-router": "^5.4.0",
     "request": "^2.81.0"
   }
 }

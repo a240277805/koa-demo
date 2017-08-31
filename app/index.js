@@ -3,7 +3,8 @@
  */
 const koa = require("koa"),
    mylogger= require("./mylogger.js"),
-    router =require('koa-router'),
+    // router =require('koa-router'),
+    routes=require('./routes/index'),
     fs=require("fs"),
 assert = require('assert');
 
@@ -104,14 +105,14 @@ app.use( mylogger.logger(":method   :url"));//添加logger
  * koa-router  集成路由
  * @type {Router}
  */
-var myRouter=new router();
-myRouter.get('/', function (ctx,next) {
-    console.log("middle5:::第"+ctx.reqCount+"次调用");
-    console.log("enter router");
-    ctx.body="hello world"
-    // ctx.router available
-});
-app.use(myRouter.routes());
+// var myRouter=new router();
+// myRouter.get('/', function (ctx,next) {
+//     console.log("middle5:::第"+ctx.reqCount+"次调用");
+//     console.log("enter router");
+//     ctx.body="hello world"
+//     // ctx.router available
+// });
+app.use(routes.routes());
 
 
 /**
